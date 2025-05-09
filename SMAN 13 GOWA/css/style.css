@@ -1,0 +1,256 @@
+:root {
+  --primary: #b69b5b;
+  --bg: #010101f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+  min-height: 2000px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: rgba(10, 1, 1, 0.879);
+  border-bottom: 2px solid #b09451;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f7e205;
+  font-style: italic;
+  text-shadow: 1px 1px 3px #fff;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.6rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 110vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../IMG/Background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgb(30, 30, 42), 20%, rgb(28, 16, 2) 10%);
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 2.5em;
+  margin-top: -15rem;
+  margin-left: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  color: #010101f1;
+  text-shadow: 1px 1px 3px #fff;
+}
+
+.hero .content p {
+  font-size: 1.5em;
+  margin-left: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  color: #e01010f1;
+  text-shadow: 1px 1px 3px #070000;
+}
+
+/*About Section*/
+.about {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  color: #f60a0af1;
+  text-shadow: 1px 1px 3px #f0e2e2;
+}
+
+.about h2 span {
+  color: var(--primary);
+}
+
+.about .cta {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  color: #f6f1f1f1;
+  background-color: var(--primary);
+  border-radius: 10px;
+  text-shadow: 1px 1px 3px #ef0808;
+}
+
+.about {
+  min-height: 100vh;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-image: url("../IMG/background tentang kami.jpg");
+}
+
+.about .row {
+  display: flex;
+  flex-wrap: warp;
+  justify-content: center;
+}
+
+.about .row .about-img {
+  padding: 0 0rem;
+  flex: center;
+}
+
+.about .row .about-img img {
+  width: 40%;
+}
+
+.about .td {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px #001aff;
+}
+
+.about .content h4 {
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #001aff;
+}
+
+.about .content p {
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #001aff;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 15rem;
+    height: 50vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5re;
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
